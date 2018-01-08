@@ -1,0 +1,21 @@
+body	{
+	text-align: center;
+	margin-top: 200px;
+	font-family: "Arial";
+}
+
+#timer	{
+	font-size: 100px;
+	font-weight: 600;
+}
+
+button	{
+	width: 100px;
+	height: 35px;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+button:hover	{
+	cursor: pointer;
+}
