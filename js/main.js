@@ -18,7 +18,8 @@ resetBtn.addEventListener('click', function(){
 	watch.reset();
 });
 
-
+var input = document.getElementById("Lightness").value
+console.log(input)
 
 var hueStart = '291';
 var saturation = '76%';
