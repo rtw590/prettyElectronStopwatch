@@ -1,6 +1,7 @@
 var timer = document.getElementById('timer');
 var toggleBtn =  document.getElementById('toggle');
 var resetBtn =  document.getElementById('reset');
+var wordLT =  document.getElementById('wordLight');
 
 var watch = new Stopwatch(timer);
 
@@ -20,16 +21,30 @@ resetBtn.addEventListener('click', function(){
 
 var input = document.getElementById("Lightness")
 
+var hueStart = '291';
+var saturation = '76%';
+var lightness = '53';
+
 
 input.addEventListener("input", function(){
-	var lightness = document.getElementById("Lightness").value.toString() + "%";
+	lightness = document.getElementById("Lightness").value.toString() + "%";
 	bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
+	if (parseInt(lightness) > 70) {
+		toggleBtn.style.color = 'black';
+		resetBtn.style.color = 'black';
+		wordLT.style.color = 'black';
+		timer.style.color = 'black';
+	}	else	{
+		toggleBtn.style.color = 'white';
+		resetBtn.style.color = 'white';
+		wordLT.style.color = 'white';
+		timer.style.color = 'white';
+	}
 })
 
 
-var hueStart = '291';
-var saturation = '76%';
-var lightness = '53%';
+
+
 
 
 if (timer.innerText.slice(-2) === '00') {
@@ -40,6 +55,7 @@ if (timer.innerText.slice(-2) === '00') {
 var bk = document.getElementById('bodyBox');
 
 bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
+
 
 function changeOnThirty () {
 	hueChange = (parseInt(hueChange) - 53);
