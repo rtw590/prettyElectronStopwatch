@@ -18,8 +18,14 @@ resetBtn.addEventListener('click', function(){
 	watch.reset();
 });
 
-var input = document.getElementById("Lightness").value
-console.log(input)
+var input = document.getElementById("Lightness")
+
+
+input.addEventListener("input", function(){
+	var lightness = document.getElementById("Lightness").value.toString() + "%";
+	bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
+})
+
 
 var hueStart = '291';
 var saturation = '76%';
@@ -36,11 +42,8 @@ var bk = document.getElementById('bodyBox');
 bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
 
 function changeOnThirty () {
-	console.log(hueChange);
 	hueChange = (parseInt(hueChange) - 53);
 	bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
-	console.log(hueChange);
-	// console.log('It Happened');
 }
 
 function isThirty() {
@@ -53,11 +56,8 @@ function isThirty() {
 setInterval(isThirty, 1000);
 
 function changeOnDoubleZero () {
-	console.log(hueChange);
 	hueChange = (parseInt(hueChange) - 53);
 	bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
-	console.log(hueChange);
-	// console.log('It Happened');
 }
 
 function isDoubleZero() {
