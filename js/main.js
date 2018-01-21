@@ -2,6 +2,8 @@ var timer = document.getElementById('timer');
 var toggleBtn =  document.getElementById('toggle');
 var resetBtn =  document.getElementById('reset');
 var wordLT =  document.getElementById('wordLight');
+var audio = new Audio('tone.mp3');
+
 
 var watch = new Stopwatch(timer);
 
@@ -42,11 +44,6 @@ input.addEventListener("input", function(){
 	}
 })
 
-
-
-
-
-
 if (timer.innerText.slice(-2) === '00') {
     var hueChange = (parseInt(hueStart) - 20);
 } 
@@ -54,17 +51,18 @@ if (timer.innerText.slice(-2) === '00') {
 
 var bk = document.getElementById('bodyBox');
 
-bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
+// bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
 
 
 function changeOnThirty () {
 	hueChange = (parseInt(hueChange) - 53);
 	bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
+	audio.play();
 }
 
 function isThirty() {
 	// console.log('It Happened');
-    if (timer.innerText.slice(-2) === '30') {
+    if (timer.innerText.slice(-2) === '10') {
 		changeOnThirty();
 	} 
 }
@@ -74,16 +72,29 @@ setInterval(isThirty, 1000);
 function changeOnDoubleZero () {
 	hueChange = (parseInt(hueChange) - 53);
 	bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
+	audio.play();
 }
 
 function isDoubleZero() {
-	// console.log('It Happened');
-    if (timer.innerText.slice(-2) === '00') {
-		changeOnDoubleZero();
-	} 
+	if (timer.innerText != '00 : 00'){
+		if (timer.innerText.slice(-2) === '05') {
+			changeOnDoubleZero();
+		} 
+	}
 }
 
+// function isDoubleZero() {
+// 	if (timer.innerText.slice(-2) === '00') {
+// 		changeOnDoubleZero();
+// 	} 
+// }
+
+// if (this.isOn){
+// 	time += delta();
+// }
+
 setInterval(isDoubleZero, 1000);
+
 
 
 
