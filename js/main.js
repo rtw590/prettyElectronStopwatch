@@ -62,7 +62,7 @@ function changeOnThirty () {
 
 function isThirty() {
 	// console.log('It Happened');
-    if (timer.innerText.slice(-2) === '10') {
+    if (timer.innerText.slice(-2) === '30') {
 		changeOnThirty();
 	} 
 }
@@ -77,7 +77,7 @@ function changeOnDoubleZero () {
 
 function isDoubleZero() {
 	if (timer.innerText != '00 : 00'){
-		if (timer.innerText.slice(-2) === '05') {
+		if (timer.innerText.slice(-2) === '00') {
 			changeOnDoubleZero();
 		} 
 	}
