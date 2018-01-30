@@ -3,6 +3,7 @@ var toggleBtn =  document.getElementById('toggle');
 var resetBtn =  document.getElementById('reset');
 var wordLT =  document.getElementById('wordLight');
 var audio = new Audio('tone.mp3');
+var audio2 = new Audio('tone2.mp3');
 
 
 var watch = new Stopwatch(timer);
@@ -57,7 +58,7 @@ var bk = document.getElementById('bodyBox');
 function changeOnThirty () {
 	hueChange = (parseInt(hueChange) - 53);
 	bk.style.backgroundColor = 'hsl('+hueChange+', '+saturation+', '+lightness+')';
-	audio.play();
+	audio2.play();
 }
 
 function isThirty() {
